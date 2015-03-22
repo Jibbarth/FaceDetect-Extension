@@ -1,0 +1,32 @@
+{
+  "name" :"FaceEmotionWrite",
+  "version" :"0.1",
+  "description" :"Detects when you are happy or surprised. If you are writing on a web page, it's put your mood as smiley in active textarea.",
+  "homepage_url": "http://jibébarth.fr",
+  "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon64.png" },
+  "browser_action": {
+    "name": "FaceEmotionWrite",
+    "icons": ["icon48.png"],
+    "default_icon": "icon48.png"
+  },
+  "permissions": [ 
+    "\u003Call_urls>", 
+    "activeTab",
+    "tabs"
+  ],
+  "background": {
+      "scripts": ["script.js"]
+    },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "manifest_version": 2
+}
