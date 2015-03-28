@@ -6,3 +6,5 @@ It's a chrome extension that follow your face expression. If you are smiling or 
 
 
 Logo come from https://dribbble.com/shots/1605447-Smile-Construct?list=searches&offset=5
+
+Input configuration come from https://github.com/aterrien/jQuery-Knob/

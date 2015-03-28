@@ -109,8 +109,6 @@ ctrack.init(pModel);
 ec = new emotionClassifier();
 ec.init(emotionModel);
 emotionData = ec.getBlank();	
-				
-
 
 function startVideo() {
 	// start video
@@ -153,11 +151,20 @@ function drawLoop() {
 					case 'surprised':
 						sToInsert = ' :O';
 						break;
+
+					case 'angry' :
+						console.log("you seem to be angry...");
+						break;
+
+					case 'sad' :
+						console.log("you seem to be angry...");
+						break;
 				}
 				var tCurrentTime = (new Date()).getTime();
 				if((tCurrentTime - tLastInsert) > tBetweenTwoInsert && sToInsert != ""){
 					tLastInsert = tCurrentTime;
 					console.log(sToInsert);
+					$("#log textarea").val($('#log textarea').val()+sToInsert);
 					// Send message to background.js
 					chrome.runtime.sendMessage({"message": sToInsert, "mood":er[i].emotion});
 				}

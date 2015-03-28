@@ -1,6 +1,6 @@
 {
   "name" :"FaceEmotionWrite",
-  "version" :"0.1",
+  "version" :"0.2",
   "description" :"Detects when you are happy or surprised. If you are writing on a web page, it's put your mood as smiley in active textarea.",
   "homepage_url": "http://jibébarth.fr",
   "icons": { "16": "icon16.png",

@@ -46,6 +46,12 @@
 			#configuration {
 				position :relative;
 			}
+			#log{
+				padding:5px;	
+			}
+			#log textarea{
+				width: 300px;
+			}
 		</style>
 		<script type="text/javascript" src="jquery.min.js"></script>
 		<script src="./js/utils.js"></script>
@@ -63,6 +69,10 @@
 					<canvas id="overlay" width="400" height="300"></canvas>
 				</div>
 				<canvas id="sketch" width="400" height="300"></canvas>
+		</div>
+		<div id="log">
+			<label> Log :</label> 
+			<textarea ></textarea>
 		</div>
 		<div id="configuration">
 			<h2>Configuration : </h2>
