@@ -3,6 +3,24 @@ var tLastInsert = (new Date()).getTime(); // to avoid multiple insertion
 var tBetweenTwoInsert = 1500;
 var iSensibility = 0.5;
 
+// Get sensibility in localStorage
+if(localStorage.iSensibility){
+	iSensibility = localStorage.iSensibility;
+}
+else {
+	localStorage.iSensibility = iSensibility;
+}
+
+if(localStorage.tBetweenTwoInsert){
+	tBetweenTwoInsert = localStorage.tBetweenTwoInsert;
+}
+else {
+	localStorage.tBetweenTwoInsert = tBetweenTwoInsert;
+}
+
+$('#sensibility').val(iSensibility);
+$('#timeBetweenInsert').val(parseFloat(tBetweenTwoInsert)/1000);
+
 vid = document.getElementById('videoel');
 overlay = document.getElementById('overlay');
 overlayCC = overlay.getContext('2d');
@@ -16,7 +34,21 @@ window.onfocus = function() {
 window.onblur = function() {
     bFocused = false;
 };
-				
+
+$("#sensibility").knob({
+	'release' : function (v) { 
+		localStorage.iSensibility = v;
+		iSensibility = localStorage.iSensibility;
+	 }
+});
+
+$("#timeBetweenInsert").knob({
+	'release' : function (v) { 
+		localStorage.tBetweenTwoInsert = v*1000;
+		tBetweenTwoInsert = localStorage.tBetweenTwoInsert;
+	 }
+});
+
 function smartInterval(func, interval){
     var last = new Date() - interval,
         now,
